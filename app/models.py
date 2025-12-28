@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from geoalchemy2 import Geography
 from app.extensions import db
@@ -29,11 +29,11 @@ class Incident(db.Model):
     priority_score = db.Column(db.Float, default=0.0)
 
   
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     updated_at = db.Column(
         db.DateTime,
-        default=datetime.utcnow,
-        onupdate=datetime.utcnow
+        default=datetime.now(timezone.utc),
+        onupdate=datetime.now(timezone.utc)
     )
 
     def to_dict(self):

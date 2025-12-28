@@ -30,7 +30,7 @@ def create_incident():
         lat=lat,
         lng=lng,
         incident_type=incident_type,
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(timezone.utc),
     )
 
     if duplicate:

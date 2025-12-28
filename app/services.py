@@ -48,7 +48,7 @@ def calculate_priority(incident: Incident):
 
     confidence = min(10, incident.confirmations + incident.trust_score)
 
-    age_minutes = (datetime.now() - incident.created_at).total_seconds() / 60
+    age_minutes = (datetime.now(timezone.utc) - incident.created_at).total_seconds() / 60
 
     if age_minutes < 5:
         urgency = 10
@@ -71,7 +71,7 @@ def calculate_priority(incident: Incident):
 def evaluate_false_report(incident: Incident):
 
 
-    age_minutes = (datetime.now() - incident.created_at).total_seconds() / 60
+    age_minutes = (datetime.now(timezone.utc) - incident.created_at).total_seconds() / 60
 
     if incident.confirmations == 0 and age_minutes > FALSE_REPORT_TIME_LIMIT:
         incident.status = "false"

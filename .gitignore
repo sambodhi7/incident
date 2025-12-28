@@ -1,0 +1,76 @@
+
+.env
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.env/
+.env.*
+!.env.example
+
+# =========================
+# Flask / SQLAlchemy
+# =========================
+instance/
+*.sqlite3
+
+# =========================
+# Migrations (keep versions!)
+# =========================
+# DO NOT ignore migrations/versions
+migrations/__pycache__/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS / Editor junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Node / frontend (if any)
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Secrets / credentials
+# =========================
+*.pem
+*.key
+
+# =========================
+# Testing / coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.bak

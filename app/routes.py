@@ -181,6 +181,6 @@ def admin_get_all_incidents():
 
     return jsonify([i.to_dict() for i in incidents])
 
-@api_bp.route("/ping"):
+@api_bp.route("/ping")
 def ping():
     return "1";

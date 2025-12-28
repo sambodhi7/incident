@@ -180,3 +180,7 @@ def admin_get_all_incidents():
     ).order_by(Incident.priority_score.desc()).all()
 
     return jsonify([i.to_dict() for i in incidents])
+
+@api_bp.route("/ping"):
+def ping():
+    return "1";

@@ -37,9 +37,11 @@ from datetime import datetime, timezone
 
 def calculate_priority(incident):
     severity_map = {
-        "fire": 9,
+          "fire": 9,
+        "medical": 8,
         "accident": 7,
-        "medical": 8
+        "infrastructure": 6,
+        "disturbance": 5,
     }
 
     severity = severity_map.get(incident.type, 4)
